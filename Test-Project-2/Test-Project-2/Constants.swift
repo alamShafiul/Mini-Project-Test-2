@@ -9,5 +9,6 @@ import Foundation
 
 class Constants {
     static let tempCell = "tempCell"
+    static let collectionCell = "collectionCell"
     static let gotoAddSegue = "gotoAddSegue"
 }

@@ -10,12 +10,16 @@ import UIKit
 class HomeView: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         CoreDataManager.shared.getData(category: nil)
     }
@@ -50,6 +54,21 @@ extension HomeView: UITableViewDataSource {
         cell.labelOne.text = CoreDataManager.shared.newses[indexPath.row].heading
         cell.labelTwo.text = CoreDataManager.shared.newses[indexPath.row].details
         cell.labelThree.text = CoreDataManager.shared.newses[indexPath.row].category
+        
+        return cell
+    }
+}
+
+extension HomeView: UICollectionViewDataSource {
+    
+}
+
+extension HomeView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.collectionCell, for: indexPath)
         
         return cell
     }
