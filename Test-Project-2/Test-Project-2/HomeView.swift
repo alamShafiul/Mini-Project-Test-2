@@ -12,22 +12,17 @@ class HomeView: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    var prevIndex = IndexPath(row: 0, section: 0)
+    var prevIndex = IndexPath(row: 0, section: 0)
+    var flag = IndexPath(item: 0, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        
-        
-//        if let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? customCVC {
-//            cell.bgView.backgroundColor = .systemGray
-//        }
         
         CoreDataManager.shared.getData(category: nil)
     }
@@ -75,6 +70,10 @@ extension HomeView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.collectionCell, for: indexPath) as! customCVC
         
         cell.catLabel.text = CatModel.categories[indexPath.row]
+        cell.bgView.backgroundColor = .systemGray4
+        if (indexPath == flag) {
+            cell.bgView.backgroundColor = .systemGray
+        }
         
         return cell
     }
@@ -85,14 +84,8 @@ extension HomeView: UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath) as? customCVC else {
             return
         }
+        flag = indexPath
         cell.bgView.backgroundColor = .systemGray
-//        cell.backgroundColor = .systemGray
-        
-//        if let prevCell = collectionView.cellForItem(at: prevIndex) as? customCVC {
-//            prevCell.bgView.backgroundColor = .systemGray4
-//            prevIndex = indexPath
-//        }
-        
         
         var str: String? = CatModel.categories[indexPath.row]
         if str == "EveryThing" {
@@ -100,6 +93,7 @@ extension HomeView: UICollectionViewDelegate {
         }
         CoreDataManager.shared.getData(category: str)
         tableView.reloadData()
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -107,16 +101,8 @@ extension HomeView: UICollectionViewDelegate {
             return
         }
         cell.bgView.backgroundColor = .systemGray4
-//        cell.backgroundColor = .systemGray4
+        collectionView.reloadData()
     }
     
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            cell.backgroundColor = .systemGray
-//        }
-//        else {
-//            cell.backgroundColor = .systemGray4
-//        }
-//    }
 }
 
