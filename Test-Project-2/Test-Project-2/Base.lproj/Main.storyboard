@@ -47,10 +47,10 @@
                                     <constraint firstItem="KDG-V4-iUb" firstAttribute="centerY" secondItem="MR0-Zp-dy7" secondAttribute="centerY" id="zHI-CY-DNX"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MUd-b6-vQU">
-                                <rect key="frame" x="0.0" y="60" width="375" height="128"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MUd-b6-vQU">
+                                <rect key="frame" x="0.0" y="60" width="375" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AaW-oP-S3c">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D3l-Xw-26G">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -58,7 +58,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="3Iy-Bx-cZT" customClass="customCVC" customModule="Test_Project_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="33.5" width="192" height="61"/>
+                                        <rect key="frame" x="0.0" y="-6.5" width="192" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DCB-Ca-Tz8">
                                             <rect key="frame" x="0.0" y="0.0" width="192" height="61"/>
@@ -67,17 +67,19 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-r4-KNH">
                                                     <rect key="frame" x="0.0" y="0.0" width="192" height="61"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzY-zl-em7">
-                                                            <rect key="frame" x="61" y="20.5" width="70.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzY-zl-em7">
+                                                            <rect key="frame" x="8" y="5" width="176" height="51"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                     <constraints>
-                                                        <constraint firstItem="PzY-zl-em7" firstAttribute="centerX" secondItem="zSp-r4-KNH" secondAttribute="centerX" id="YoQ-jT-d1B"/>
-                                                        <constraint firstItem="PzY-zl-em7" firstAttribute="centerY" secondItem="zSp-r4-KNH" secondAttribute="centerY" id="sw9-YT-WgM"/>
+                                                        <constraint firstItem="PzY-zl-em7" firstAttribute="leading" secondItem="zSp-r4-KNH" secondAttribute="leading" constant="8" id="0nB-Uv-o8m"/>
+                                                        <constraint firstAttribute="bottom" secondItem="PzY-zl-em7" secondAttribute="bottom" constant="5" id="bVG-9w-8wm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PzY-zl-em7" secondAttribute="trailing" constant="8" id="fH2-hn-1tz"/>
+                                                        <constraint firstItem="PzY-zl-em7" firstAttribute="top" secondItem="zSp-r4-KNH" secondAttribute="top" constant="5" id="jwQ-Bj-pcL"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -97,7 +99,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OZo-7A-fLg">
-                                <rect key="frame" x="0.0" y="188" width="375" height="479"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tempCell" rowHeight="100" id="tt6-2F-eGq" customClass="customTVC" customModule="Test_Project_2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="375" height="100"/>
@@ -170,7 +172,7 @@
                             <constraint firstItem="MUd-b6-vQU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8y0-jy-9yB"/>
                             <constraint firstItem="MR0-Zp-dy7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.09" id="DFz-Jl-3F7"/>
                             <constraint firstItem="MUd-b6-vQU" firstAttribute="top" secondItem="MR0-Zp-dy7" secondAttribute="bottom" id="FEp-bh-r3k"/>
-                            <constraint firstItem="MUd-b6-vQU" firstAttribute="height" secondItem="MR0-Zp-dy7" secondAttribute="height" multiplier="2.13333" id="UF2-Xk-7Qr"/>
+                            <constraint firstItem="MUd-b6-vQU" firstAttribute="height" secondItem="MR0-Zp-dy7" secondAttribute="height" multiplier="0.8" id="UF2-Xk-7Qr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MR0-Zp-dy7" secondAttribute="trailing" id="YH2-vh-a0W"/>
                             <constraint firstItem="OZo-7A-fLg" firstAttribute="top" secondItem="MUd-b6-vQU" secondAttribute="bottom" id="gIo-xM-X5t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MUd-b6-vQU" secondAttribute="trailing" id="l70-Pp-fMn"/>
@@ -254,8 +256,8 @@
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
